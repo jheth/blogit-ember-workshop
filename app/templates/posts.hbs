@@ -1,5 +1,9 @@
 <h2>My Posts ({{model.length}})</h2>
 
+{{#em-modal-toggler modal-id="new-post" class="btn btn-secondary"}}Add Post{{/em-modal-toggler}}
+
+{{new-post action="savePost"}}
+
 <div class="row">
   {{#each post in model}}
     <div class="col-xs-6 col-lg-4 blog-item">
