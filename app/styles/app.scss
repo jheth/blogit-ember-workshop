@@ -1,0 +1,22 @@
+.navbar-inverse .navbar-nav > li > a.active {
+  color: #fff;
+  background-color: #080808;
+}
+
+.blog-item {
+  min-height: 200px;
+  h2 {
+    i {
+      font-size: 15px;
+      color: #aaa;
+    }
+  }
+  .description {
+    height: 60px;
+    overflow: hidden;
+  }
+  .button {
+    position: absolute;
+    bottom: 10px;
+  }
+}
