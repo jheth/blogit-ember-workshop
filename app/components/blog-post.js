@@ -3,6 +3,15 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   isEditing: false,
   post: null,
+
+  onEditTitle: function() {
+    var title = this.get( "post.title" );
+    var newtitle = title.replace( /react/gi, "" );
+    if ( title !== newtitle ) {
+      this.set( "post.title", newtitle );
+    }
+  }.observes( "post.title" ),
+
   actions: {
     edit: function() {
       this.set('isEditing', true);
