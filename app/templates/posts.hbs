@@ -7,8 +7,12 @@
 <div class="row">
   {{#each post in model}}
     <div class="col-xs-6 col-lg-4 blog-item">
-      <h2>{{post.title}}</h2>
+      <h2>{{post.title}} {{fa-icon "camera"}}</h2>
       <p class="description">{{post.body}}</p>
+
+      {{#if post.isPublished}}
+        {{fa-icon "check"}} <strong>Published {{moment post.publishDate 'LL'}}</strong>
+      {{/if}}
 
       <div class="button">
         {{#link-to 'post' post class="btn btn-primary" role="button"}}Read More &raquo;{{/link-to}}

@@ -10,13 +10,16 @@
 
 {{#if isEditing}}
   <button {{action 'save'}}>Save</button>
+  {{#if post.isDirty}}
+    {{fa-icon "save"}}
+  {{/if}}
 {{else}}
 
   {{#unless post.isPublished}}
-    <button {{action 'edit'}}>Edit</button>
+    <button {{action 'edit'}}>{{fa-icon "edit"}}</button>
   {{/unless}}
 
-  <button {{action 'delete'}}>Delete</button>
+  <button {{action 'delete'}}>{{fa-icon "trash"}}</button>
 
   {{#if post.isPublished}}
     <strong>Published {{ago post.publishedDate}}</strong>
