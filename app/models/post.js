@@ -7,10 +7,15 @@ var Post = DS.Model.extend({
   author: DS.attr('string'),
   createdAt: DS.attr('date'),
   publishedAt: DS.attr('date'),
+  deletedAt: DS.attr('date'),
 
   isPublished: function() {
     return Ember.isPresent( this.get('publishedAt') );
-  }.property('publishedAt')
+  }.property('publishedAt'),
+
+  isDeleted: function() {
+    return Ember.isPresent( this.get('deletedAt') );
+  }.property('deletedAt')
 });
 
 Post.reopenClass({

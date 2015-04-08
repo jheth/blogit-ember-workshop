@@ -13,6 +13,10 @@ export default Ember.Component.extend({
     },
     publish: function() {
       this.set('post.publishedAt', Date.now());
+    },
+    delete: function() {
+      this.set('post.deletedAt', Date.now());
+      this.sendAction('postDeleted');
     }
   }
 });

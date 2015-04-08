@@ -16,6 +16,8 @@
     <button {{action 'edit'}}>Edit</button>
   {{/unless}}
 
+  <button {{action 'delete'}}>Delete</button>
+
   {{#if post.isPublished}}
     <strong>Published {{ago post.publishedDate}}</strong>
   {{else}}
