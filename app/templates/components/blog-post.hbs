@@ -11,5 +11,15 @@
 {{#if isEditing}}
   <button {{action 'save'}}>Save</button>
 {{else}}
-  <button {{action 'edit'}}>Edit</button>
+
+  {{#unless post.isPublished}}
+    <button {{action 'edit'}}>Edit</button>
+  {{/unless}}
+
+  {{#if post.isPublished}}
+    <strong>Published {{ago post.publishedDate}}</strong>
+  {{else}}
+    <button {{action 'publish'}}>Publish</button>
+  {{/if}}
+
 {{/if}}

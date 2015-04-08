@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   isEditing: false,
+  post: null,
   actions: {
     edit: function() {
       this.set('isEditing', true);
@@ -9,6 +10,9 @@ export default Ember.Component.extend({
     save: function() {
       this.set('isEditing', false);
       this.get('post').save();
+    },
+    publish: function() {
+      this.set('post.publishedAt', Date.now());
     }
   }
 });
